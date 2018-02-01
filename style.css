@@ -1,0 +1,9 @@
+body{font-family: sans-serif;}
+.title {color: #7BCDD0; text-align: center;} /*color code, hex found online*/
+header{background-color: #72ADAF}
+#logo{text-align: center;}
+#links{text-align: right;} /*ID*/
+.thumbnail{
+  width:100px;
+  height:100px:
+}
