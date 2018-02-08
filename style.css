@@ -23,8 +23,6 @@ header {
 .header-logo {
   grid-area: logo;
   justify-self: center;
-  width:300px;
-  height:120px:
 }
 
 /* Use this class on a div that contains the description, link, etc. */
