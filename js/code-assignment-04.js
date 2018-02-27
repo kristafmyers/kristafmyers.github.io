@@ -66,15 +66,3 @@ console.log(projectObject["title"])
 //}]
 
 //console.log(projectarray)
-
-
-
-
-
-// let projectId = 3
-// let projectUrl = 'https://web-gis-kfm.maps.arcgis.com/apps/GeoForm/index.html?appid=48d838a0c57d431bb1173b86ea8fb409'
-// let projectTitle = 'Alaska Weather - Citizen Science Based Web Map'
-// let projectDesc = 'Crowd sourced meterological data from across the state of Alaska'
-// let projectThumb = true
-// let projectMapExtent = [48.51, -28.37, 2.63, -132.34]
-//

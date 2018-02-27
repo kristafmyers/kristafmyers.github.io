@@ -21,18 +21,11 @@ let projects = [ {
 }]
 
 
-for (let i=0; i < projects.length; i++) {
-  console.log(i)
+for (let i = 0; i < projects.length; i++) {
+  console.log('Index position: ' + i + ', Title: ' + projects[i].title) // log the current project's title
+  if (projects[i].hasThumbnail === true) {
+    console.log('images/ss-project-' + projects[i].id + '.png') // build and log an image file name based on the project ID
+  } else {
+    console.log('images/no-preview.png')
+  }
 }
-
-
-
-
-
-
-
-
-//console.log(projects)
-
-//to access the title of project one in the console
-//projects[0].title
