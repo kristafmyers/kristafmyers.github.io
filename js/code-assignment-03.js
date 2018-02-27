@@ -7,35 +7,6 @@ let projectThumb = true
 let projectMapExtent = [48.51, -28.37, 2.63, -132.34]
 
 
-let projectArray = [
-  1,
-  'https://www.arcgis.com/apps/MapTour/index.html?appid=32357dc8934040dc90b8581adcafa21a',
-  'Tour McMurdo and Surrounding Areas (Book 1)',
-  'Interactive story map tour of Ross Island and the McMurdo Dry Valleys. Created by Krista Myers 2018-01-23',
-  true,
-  ['McMurdo','Story map']
-]
-
-let projectObject = {
-  id: 1,
-  url: 'https://www.arcgis.com/apps/MapTour/index.html?appid=32357dc8934040dc90b8581adcafa21a',
-  title: 'Tour McMurdo and Surrounding Areas (Book 1)',
-  description: 'Interactive story map tour of Ross Island and the McMurdo Dry Valleys. Created by Krista Myers 2018-01-23',
-  hasThumbnail: true,
-  keywords: ['McMurdo','Story map']
-}
-
-
-
-//console.log(projectObject)
-
-//console.log(projectArray[2])
-//console.log(projectObject.title)
-//console.log(projectObject['title'])
-
-
-console.log(projectArray)
-console.log(projectObject)
 
 // let projectId = 2
 // let projectUrl = 'https://www.arcgis.com/apps/Minimalist/index.html?appid=22073ad7d34240b3acf80f0b1ec00929'
