@@ -25,7 +25,7 @@ let projects = [ {
 /*
   Build a string to use as the value for the alt attribute of an img tag.
  */
-function createThumbnailAlt (project) {
+function createThumbnailAlt (projects) {
   let thumbnailAlt = 'Project ' + projects.id + ' - ' + projects.title
   return thumbnailAlt
 }
@@ -34,7 +34,7 @@ function createThumbnailAlt (project) {
   Build a file path for a project thumbnail image based on the project ID to be
   used as the value for the src attribute of an img tag.
  */
-function createThumbnailSrc (project) {
+function createThumbnailSrc (projects) {
   if (projects.hasThumbnail === true) {
     let thumbnailSrc = 'images/ss-project-' + project.id + '.png'
     return thumbnailSrc
