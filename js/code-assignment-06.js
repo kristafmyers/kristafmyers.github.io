@@ -25,7 +25,7 @@ let projects = [ {
 /*
   Build a string to use as the value for the alt attribute of an img tag.
  */
-function createThumbnailAlt (projects) {
+function createThumbnailAlt (project) {
   let thumbnailAlt = 'Project ' + projects.id + ' - ' + projects.title
   return thumbnailAlt
 }
