@@ -15,8 +15,24 @@ let polygon = L.polygon([
   [-77.704653, 161.987424]
 ]).addTo(webmap);
 
+
+var pointA = new L.LatLng(-77.530414, 163.559562);
+var pointB = new L.LatLng(-77.566768, 163.413217);
+var pointC = new L.LatLng(-77.607842, 163.437426);
+var pointD = new L.LatLng(-77.613866, 163.584584);
+var pointList = [pointA, pointB, pointC, pointD];
+
+var firstpolyline = new L.polyline(pointList, {
+    color: 'red',
+    weight: 3,
+    opacity: 0.5,
+    smoothFactor: 1
+});
+firstpolyline.addTo(webmap);
+
 polygon.bindPopup('Taylor Valley')
 marker.bindPopup('Lake Fryxell Camp')
+firstpolyline.bindPopup('Ross Ice Sheet extent during Last Glacial Maximum')
 
 webmap.on('click', function (event) {
   console.log('You clicked the map at ' + event.latlng)
