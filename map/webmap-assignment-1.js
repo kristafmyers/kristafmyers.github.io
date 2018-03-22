@@ -7,3 +7,17 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 }).addTo(webmap)
 
 let marker = L.marker([-77.60582, 163.12549]).addTo(webmap)
+
+let polygon = L.polygon([
+  [-77.478645, 163.689102],
+  [-77.629187, 163.621913],
+  [-77.816041, 162.122662],
+  [-77.704653, 161.987424]
+]).addTo(webmap);
+
+polygon.bindPopup('Taylor Valley')
+marker.bindPopup('Lake Fryxell Camp')
+
+webmap.on('click', function (event) {
+  console.log('You clicked the map at ' + event.latlng)
+})
