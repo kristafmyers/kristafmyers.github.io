@@ -10,7 +10,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 let penguinIcon = L.icon({
   iconUrl: 'penguin.png',
   iconSize: [16, 20], // size of the icon
-  iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
+  iconAnchor: [8, 10], // point of the icon which will correspond to marker's location
   popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
 })
 
@@ -27,7 +27,8 @@ let polyCoords = [
 
 let polyStyle = {
   color: 'green',
-  fillColor: 'green'
+  fillColor: 'green',
+	weight: 3
 }
 
 let polygon = L.polygon(polyCoords, polyStyle).addTo(webmap);
