@@ -23,6 +23,8 @@ let myThreeBasemaps = {
 	'Street basemap': boringMap
 }
 
+let anchorage =L.marker([61.2181, 149.9003]).addTo(webmap)
+
 L.control.layers(myThreeBasemaps).addTo(webmap)
 }
 
