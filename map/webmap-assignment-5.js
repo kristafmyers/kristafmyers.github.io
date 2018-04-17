@@ -10,12 +10,12 @@ let satelliteBase= L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/serv
 let topoBase=L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	maxZoom: 17,
 	attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-}).addTo(webmap)
+})
 
 let boringMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(webmap)
+})
 
 let myThreeBasemaps = {
 	'Satellite imagery basemap': satelliteBase,
@@ -26,6 +26,33 @@ let myThreeBasemaps = {
 let anchorage =L.marker([61.2181, 149.9003]).addTo(webmap)
 
 L.control.layers(myThreeBasemaps).addTo(webmap)
+
+function JasonsFashion (feature) {
+  let pop = feature.properties.POPULATION // get the current state's Median Age attribute
+  let stateColor = 'orange' // let the initial color be orange
+  if ( pop < 1000000 ) { stateColor = 'blue' } // if the state's median age is less than the average, color it blue
+  let JasonIsStylish = {
+    color: stateColor, //use the color variable above for the value
+    weight: 3,
+    fillOpacity: 0.4
+  }
+  return JasonIsStylish
 }
+
+function JasonsPopup (feature, layer) {
+	 let name = feature.properties.STATE_NAME
+	 let subregion = feature.properties.SUB_REGION
+	 let pop = feature.properties.POPULATION
+	 layer.bindPopup(name + ' is within the subregion of ' + subregion + '<br>And the population is: ' + pop)
+ }
+ let JasonLikesOptions = {
+	 style: JasonsFashion,
+	 onEachFeature: JasonsPopup
+ }
+ L.geoJSON(geoJ, JasonLikesOptions).addTo(webmap)
+}
+
+
+
 
 map5()
