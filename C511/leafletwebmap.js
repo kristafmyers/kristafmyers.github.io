@@ -25,6 +25,10 @@ let myThreeBasemaps = {
 
 L.control.layers(myThreeBasemaps).addTo(webmap)
 
+ L.geoJSON(Met).addTo(webmap)
+
+
+
 }
 
 
