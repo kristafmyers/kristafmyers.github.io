@@ -26,14 +26,29 @@ let myThreeBasemaps = {
 L.control.layers(myThreeBasemaps).addTo(webmap)
 
 
+function styleMarker (feature) {
+//  let type = feature.properties.TYPE // met, BB, or camp
+	let typeColor = 'orange' // let the initial color be orange
+//  if ( type = "Met" ) { typeColor = 'blue' } // if the state's median age is less than the average, color it blue
+  let styleMarker = {
+    color: typeColor, //use the color variable above for the value
+    weight: 3,
+    fillOpacity: 0.4
+  }
+  return styleMarker
+}
 
-function C511popups (features, layer) {
-	 let name = MetBBCamps.features
-
+function C511popups (feature, layer) {
+	 let name = feature.properties.NAME
 	 layer.bindPopup(name)
  }
 
- L.geoJSON(MetBBCamps,C511popups).addTo(webmap)
+ let styleOptions = {
+	 style: styleMarker,
+	onEachFeature: C511popups
+ }
+
+ L.geoJSON(MetBBCamps, styleOptions).addTo(webmap)
 }
 
 
