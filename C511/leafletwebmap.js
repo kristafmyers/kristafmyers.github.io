@@ -25,11 +25,20 @@ let myThreeBasemaps = {
 
 L.control.layers(myThreeBasemaps).addTo(webmap)
 
- L.geoJSON(Met).addTo(webmap)
 
 
+function C511popups (features, layer) {
+	 let name = MetBBCamps.features
 
+	 layer.bindPopup(name)
+ }
+
+ L.geoJSON(MetBBCamps,C511popups).addTo(webmap)
 }
+
+
+
+
 
 
 
