@@ -56,10 +56,11 @@ function createCircles (feature, latlng) {
 
 function C511popups (feature, layer) {
 	 let name = feature.properties.NAME
-	 layer.bindPopup(name)
+	 let valley = feature.properties.LOC
+	 layer.bindPopup(name + '<br>Location: ' + valley )
 	 let type = feature.properties.TYPE // met, BB, or camp
 	 if (type=="Met"){
-		layer.bindPopup(name + ' Met Station')
+		layer.bindPopup(name + ' Met Station' + '<br>Location: ' + valley)
 	 }
  }
 
