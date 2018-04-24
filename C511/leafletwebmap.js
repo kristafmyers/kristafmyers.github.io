@@ -44,7 +44,7 @@ function C511popups (feature, layer) {
  }
 
  let styleOptions = {
-	 style: styleMarker,
+	 style: styleOfMarker,
 	 onEachFeature: C511popups
  }
 
