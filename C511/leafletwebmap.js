@@ -26,26 +26,47 @@ let myThreeBasemaps = {
 L.control.layers(myThreeBasemaps).addTo(webmap)
 
 
-function styleMarker (feature) {
-  let type = feature.properties.TYPE // met, BB, or camp
-	let typeColor = 'orange' // let the initial color be orange
-  if ( type = "Met" ) { typeColor = 'blue' } // if the state's median age is less than the average, color it blue
-  let styleOfMarker = {
-    color: typeColor //use the color variable above for the value
-  }
-  return styleOfMarker
+
+
+// create an object with a list of options to style the circle marker
+// see http://leafletjs.com/reference-1.3.0.html#path for additional options
+function myStyle (feature) {
+	let type = feature.properties.TYPE // met, BB, or camp
+	let color = 'Orange'
+	if (type == "Met") {
+		color = 'Yellow'
+	}
+	if (type== "LakeBB"){
+		color = 'Blue'
+	}
+	let myStyle = {
+  	color: color,
+  	radius: 5
+	}
+	return myStyle
 }
 
-let color = 'orange'
+
+
+// add all of the GeoJSON data to the empty layer we created
+function createCircles (feature, latlng) {
+  return L.circleMarker(latlng, myStyle)
+}
+
 
 function C511popups (feature, layer) {
 	 let name = feature.properties.NAME
 	 layer.bindPopup(name)
+	 let type = feature.properties.TYPE // met, BB, or camp
+	 if (type=="Met"){
+		layer.bindPopup(name + ' Met Station')
+	 }
  }
 
  let styleOptions = {
-	 style: styleOfMarker,
-	 onEachFeature: C511popups
+	 style: myStyle,
+	 onEachFeature: C511popups,
+	 pointToLayer: createCircles
  }
 
  L.geoJSON(MetBBCamps, styleOptions).addTo(webmap)
