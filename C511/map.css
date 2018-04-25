@@ -1,3 +1,18 @@
 #leafletmap { height: 500px }
 
-#legend
+body {
+  display: grid;
+  grid: "symbols leafletmap" auto / 250px /*img = first element, 2nd element = meta*/
+
+}
+
+/* Use this class on a div that contains the img element */
+.body-symbols {
+  grid-area: symbols;
+  justify-self: text-left;
+}
+
+.body-leafletmap {
+  grid-area: leafletmap;
+  justify-self: right;
+}

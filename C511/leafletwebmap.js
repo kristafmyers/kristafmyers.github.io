@@ -47,11 +47,28 @@ function myStyle (feature) {
 }
 
 
+let mcmurdoStyle={
+	color: 'red',
+}
+
+let mcmloc=[-77.845783, 166.669823]
+
+
+
+let mcmurdo =L.marker(mcmloc, mcmurdoStyle).addTo(webmap)
+
+mcmurdo.bindPopup('McMurdo Station<br>Ross Island')
+
+
+
+
+
 
 // add all of the GeoJSON data to the empty layer we created
 function createCircles (feature, latlng) {
   return L.circleMarker(latlng, myStyle)
 }
+
 
 
 function C511popups (feature, layer) {
@@ -67,7 +84,7 @@ function C511popups (feature, layer) {
  let styleOptions = {
 	 style: myStyle,
 	 onEachFeature: C511popups,
-	 pointToLayer: createCircles
+	 pointToLayer: createCircles,
  }
 
  L.geoJSON(MetBBCamps, styleOptions).addTo(webmap)
