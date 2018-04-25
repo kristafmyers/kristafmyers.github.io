@@ -16,3 +16,23 @@ body {
   grid-area: leafletmap;
   justify-self: right;
 }
+
+
+
+header {
+  display: grid;
+  grid: "logo links" auto / 1300px auto; /*img = first element, 2nd element = meta*/
+  margin-bottom: 20px;
+}
+
+/* Use this class on a div that contains the img element */
+.header-logo {
+  grid-area: logo;
+  justify-self: center;
+}
+
+/* Use this class on a div that contains the description, link, etc. */
+.header-links {
+  grid-area: links;
+  align-self: right;
+}

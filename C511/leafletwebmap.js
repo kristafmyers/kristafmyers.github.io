@@ -47,16 +47,12 @@ function myStyle (feature) {
 }
 
 
+
 let mcmurdoStyle={
 	color: 'red',
 }
-
 let mcmloc=[-77.845783, 166.669823]
-
-
-
 let mcmurdo =L.marker(mcmloc, mcmurdoStyle).addTo(webmap)
-
 mcmurdo.bindPopup('McMurdo Station<br>Ross Island')
 
 
