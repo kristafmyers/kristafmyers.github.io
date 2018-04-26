@@ -32,7 +32,7 @@ L.control.layers(myThreeBasemaps).addTo(webmap)
 // see http://leafletjs.com/reference-1.3.0.html#path for additional options
 function myStyle (feature) {
 	let type = feature.properties.TYPE // met, BB, or camp
-	let color = 'Orange'
+	let color = 'Magenta'
 	if (type == "Met") {
 		color = 'Yellow'
 	}
@@ -47,23 +47,20 @@ function myStyle (feature) {
 }
 
 
-
-let mcmurdoStyle={
-	color: 'red',
-}
-let mcmloc=[-77.845783, 166.669823]
-let mcmurdo =L.marker(mcmloc, mcmurdoStyle).addTo(webmap)
-mcmurdo.bindPopup('McMurdo Station<br>Ross Island')
-
-
-
-
-
-
 // add all of the GeoJSON data to the empty layer we created
 function createCircles (feature, latlng) {
   return L.circleMarker(latlng, myStyle)
 }
+
+
+let mcmurdoStyle={
+	color: 'red',
+	radius: 500
+}
+let mcmloc=[-77.845783, 166.669823]
+let mcmurdo =L.circle(mcmloc, mcmurdoStyle).addTo(webmap)
+mcmurdo.bindPopup('McMurdo Station<br>Ross Island')
+
 
 
 
